@@ -10,9 +10,8 @@ import view.Guest;
 public class Home extends JFrame{
 
     private JTabbedPane tab; 
-    private CardLayout card;
-    private Container c;
-
+    //private CardLayout card;
+    //private Container c;
     public Home() {
 
         super("Drink Ordering System");
@@ -27,8 +26,8 @@ public class Home extends JFrame{
     public void initComps(){
         
         tab = new JTabbedPane();
-        card = new CardLayout(40, 30);
-        c = getContentPane();
+        //card = new CardLayout(40, 30);
+        //c = getContentPane();
     }
 
     public void addComps(){
