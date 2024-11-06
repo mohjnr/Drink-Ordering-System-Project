@@ -75,14 +75,14 @@ public class Employee extends JPanel implements ActionListener {
             cardLayout.show(mainPanel, "MessagePanel");
 
             // Optionally, open a new frame with the message
-            JFrame messageFrame = new JFrame("Message");
-            messageFrame.setSize(200, 100);
+            JPanel messageFrame = new JPanel();
+            //messageFrame.setSize(200, 100);
             messageFrame.add(new JLabel("This is Card", SwingConstants.CENTER));
-            messageFrame.setLocationRelativeTo(this);
+            //messageFrame.setLocationRelativeTo(this);
             messageFrame.setVisible(true);
 
             // Close the original frame
-            SwingUtilities.getWindowAncestor(this).dispose();
+            //SwingUtilities.getWindowAncestor(this).dispose();
 
         }
     }
