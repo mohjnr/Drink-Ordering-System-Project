@@ -36,17 +36,6 @@ public class GuestSelection extends JPanel implements ActionListener {
         JPanel buttonPanel = new JPanel(new GridLayout(2, 1, 10, 10));
         orderButton = new JButton("Order");
         orderSummary = new JButton("Order Summary");
-
-        // Set a smaller preferred size for the buttons
-        Dimension buttonSize = new Dimension(80, 30);  // Width = 80, Height = 30
-        orderButton.setPreferredSize(buttonSize);
-        orderSummary.setPreferredSize(buttonSize);
-
-        // Optionally, set a smaller font size if you want even smaller buttons
-        Font buttonFont = new Font("Arial", Font.PLAIN, 12);
-        orderButton.setFont(buttonFont);
-        orderSummary.setFont(buttonFont);
-
         buttonPanel.add(orderButton);
         buttonPanel.add(orderSummary);
 
@@ -59,12 +48,14 @@ public class GuestSelection extends JPanel implements ActionListener {
         loginPanel.add(imageLabel, BorderLayout.EAST);
 
         // Second panel for CardLayout message
-        JPanel messagePanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
-        messagePanel.add(new JLabel("This is Card"));
+        JPanel messagePanel = new DrinkMenu();
+        JPanel messagePanel2 = new OrderInfo();
+        //messagePanel.add(new JLabel("This is Card"));
 
         // Add both panels to the CardLayout
         mainPanel.add(loginPanel, "LoginPanel");
         mainPanel.add(messagePanel, "MessagePanel");
+        mainPanel.add(messagePanel2,"MessagePanel2");
 
         // Set main layout and add mainPanel to GuestSelection panel
         this.setLayout(new BorderLayout());
@@ -82,6 +73,8 @@ public class GuestSelection extends JPanel implements ActionListener {
             // Switch to the "MessagePanel" in the mainPanel's CardLayout
             cardLayout.show(mainPanel, "MessagePanel");
         }
+        else if(e.getSource() == orderSummary){
+            cardLayout.show(mainPanel, "MessagePanel2");
+        }
     }
 }
-
